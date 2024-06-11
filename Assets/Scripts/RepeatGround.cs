@@ -12,6 +12,9 @@ public class RepeatGround : MonoBehaviour
     {
         startPos = transform.position;
         repeatWidth = GetComponent<BoxCollider>().size.z / 2;
+        
+        // The ground is scaled by the z axis, so we need to multiply the repeat width by the scale of the z axis
+        repeatWidth *= transform.localScale.z;
     }
 
     // Update is called once per frame
