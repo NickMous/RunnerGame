@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private GameObject player;
+    private SpawnManager spawnManager;
     private TextMeshProUGUI coinsText;
     private TextMeshProUGUI distanceText;
     public GameObject gameOverScreen;
     public GameObject titleScreen;
-    public SpawnManager spawnManager;
     public bool isGameActive;
     public float rampUpSpeed = 1;
     public int coins;
