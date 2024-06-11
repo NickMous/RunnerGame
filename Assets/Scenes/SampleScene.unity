@@ -323,17 +323,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 214447032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8a4184cf8caa38d8e0cf205c0b5bcd, type: 3}
+  m_Script: {fileID: 11500000, guid: f9af59da0800796bb8843a70bb52aef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirtParticle: {fileID: 420305558}
+  explosionParticle: {fileID: 255155521}
+  fireworksParticle: {fileID: 1391568160}
+  isOnGround: 1
+  gravityModifier: 10
   jumpForce: 2000
   moveForce: 10
-  gravityModifier: 10
-  isOnGround: 1
-  explosionParticle: {fileID: 255155521}
-  dirtParticle: {fileID: 420305558}
-  fireworksParticle: {fileID: 1391568160}
-  collidedWithObstacle: 0
+  screenEdge: 8
 --- !u!54 &214447038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -459,7 +459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4616f8662081955b4b79f3d1b70118d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 3
 --- !u!114 &628739213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,7 +1263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4616f8662081955b4b79f3d1b70118d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 1
 --- !u!1 &1035815851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1381,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035815851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac4f520034cf1822834d2149d0f1eda, type: 3}
+  m_Script: {fileID: 11500000, guid: 236a1dc913422acc9a84de6ee6c32d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFence: 0
@@ -1396,7 +1394,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035815851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43db0a2dae79d979692e808bcca759fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 42ff5959176337a47afc8dd3d055716d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
@@ -1925,28 +1923,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1341905192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df042cba2420994f9b1053c6975867b9, type: 3}
+  m_Script: {fileID: 11500000, guid: adfd5c51b5e2b62428bcfdf489cd5969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 3839024980076541511, guid: aca599c221013e326adb09ec11bf113e, type: 3}
-  - {fileID: 3550719619825019827, guid: c98e16cef6b3b7e8f905851ac6c432ed, type: 3}
-  - {fileID: 157152050517481990, guid: 51b9817fc21918f3ba154676cff20cc3, type: 3}
-  - {fileID: 9171622549326522100, guid: c0d433d23b13c440a96211c7ac89b63b, type: 3}
-  - {fileID: 2247615517081393724, guid: 96250ec06c8efd1acac65bf6ad9e8170, type: 3}
-  - {fileID: 7360441074664201665, guid: 894536ab707e68f53a4260587d8c7415, type: 3}
-  - {fileID: 35562166811409173, guid: fab1827f2a326dbb597f49170e014014, type: 3}
-  - {fileID: 6068606955826930589, guid: 6df39ca7567a2a535a4efe8cba76f991, type: 3}
-  - {fileID: 3820756319905555725, guid: 73a439b4875dad31cb886dc88e560f5e, type: 3}
-  - {fileID: 2149369223696122535, guid: c93ce990095373099a155781a15af92a, type: 3}
-  delayMin: 0.2
-  delayMax: 1
-  isGameActive: 0
-  titleScreen: {fileID: 1293409434}
   gameOverScreen: {fileID: 1688708255}
-  difficulty: 0
+  titleScreen: {fileID: 1293409434}
+  spawnManager: {fileID: 0}
+  isGameActive: 0
+  rampUpSpeed: 1
   coins: 0
   coinsToAdd: 10
+  difficulty: 0
   distance: 0
 --- !u!1 &1352724321
 GameObject:
@@ -2582,7 +2569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4616f8662081955b4b79f3d1b70118d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 2
 --- !u!114 &1748500335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2706,7 +2692,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816048801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0894b644e698101378abf73ba068139c, type: 3}
+  m_Script: {fileID: 11500000, guid: bd169ad3ee5f43333960cce2cc935604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
@@ -2720,8 +2706,10 @@ MonoBehaviour:
   - {fileID: 3820756319905555725, guid: 73a439b4875dad31cb886dc88e560f5e, type: 3}
   - {fileID: 2149369223696122535, guid: c93ce990095373099a155781a15af92a, type: 3}
   - {fileID: 7360441074664201665, guid: 894536ab707e68f53a4260587d8c7415, type: 3}
-  delayMin: 0.2
   delayMax: 1
+  delayMin: 0.2
+  startDelay: 2
+  obstacleBorder: 16
 --- !u!1 &1845788721
 GameObject:
   m_ObjectHideFlags: 0
