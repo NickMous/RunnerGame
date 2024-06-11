@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveBackwards : MonoBehaviour
 {
     private const float Speed = 30.0f;
+    public bool isFence;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,9 @@ public class MoveBackwards : MonoBehaviour
         // fences are living their best life, so they move the opposite way
         switch (transform.rotation.y)
         {
+            case > -10 and < 10 when isFence:
+                transform.Translate(Vector3.forward * movement);
+                break;
             case > -10 and < 10:
                 transform.Translate(Vector3.back * movement);
                 break;
